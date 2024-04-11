@@ -1,9 +1,13 @@
 package com.example.myprojectuts
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Adapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import java.text.FieldPosition
+import java.util.Objects
 
 class MainActivity : AppCompatActivity() {
     private lateinit var bungaRecyclerView: RecyclerView
@@ -17,31 +21,95 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        gambar = arrayOf(
+            R.drawable.anggrek,
+            R.drawable.anthurium,
+            R.drawable.dahlia,
+            R.drawable.black_rose,
+            R.drawable.bugenvil,
+            R.drawable.flamboyan,
+            R.drawable.kamboja,
+            R.drawable.lavender,
+            R.drawable.lily,
+            R.drawable.matahari,
+            R.drawable.mawar,
+            R.drawable.raflesia,
+            R.drawable.sakura,
+            R.drawable.sepatu,
+            R.drawable.teratai,
+            R.drawable.tulip
+        )
+
+        nama = arrayOf(
+            "anggrek",
+            "anthurium",
+            "dahlia",
+            "black_rose",
+            "bugenvil",
+            "flamboyan",
+            "kamboja",
+            "lavender",
+            "lily",
+            "matahari",
+            "mawar",
+            "raflesia",
+            "sakura",
+            "sepatu",
+            "teratai",
+            "tulip"
+        )
+
+        deskrpsi = arrayOf(
+            getString(R.string.black_rose),
+            getString(R.string.raflesia),
+            getString(R.string.anggrek),
+            getString(R.string.anthurium),
+            getString(R.string.bugenvil),
+            getString(R.string.dahlia),
+            getString(R.string.flamboyan),
+            getString(R.string.lavender),
+            getString(R.string.kamboja),
+            getString(R.string.lily),
+            getString(R.string.matahari),
+            getString(R.string.mawar),
+            getString(R.string.sakura),
+            getString(R.string.sepatu),
+            getString(R.string.teratai),
+            getString(R.string.tulip)
+        )
 
 
         bungaRecyclerView=findViewById(R.id.BungaRV)
-        listBunga = ArrayList()
-
-        listBunga.add(ItemData(R.drawable.black_rose, "black rose"))
-        listBunga.add(ItemData(R.drawable.kamboja, "Kamboja"))
-        listBunga.add(ItemData(R.drawable.matahari, "Matahari"))
-        listBunga.add(ItemData(R.drawable.lily, "Lily"))
-        listBunga.add(ItemData(R.drawable.raflesia, "Raflesia"))
-        listBunga.add(ItemData(R.drawable.tulip, "Tulip"))
-        listBunga.add(ItemData(R.drawable.anthurium, "Anthurium"))
-        listBunga.add(ItemData(R.drawable.anggrek, "Anggrek"))
-        listBunga.add(ItemData(R.drawable.dahlia, "Dahlia"))
-        listBunga.add(ItemData(R.drawable.bugenvil, "Bugenvil"))
-        listBunga.add(ItemData(R.drawable.sakura, "Sakura"))
-        listBunga.add(ItemData(R.drawable.sepatu, "Sepatu"))
-        listBunga.add(ItemData(R.drawable.teratai, "Teratai"))
-        listBunga.add(ItemData(R.drawable.lavender, "Lavender"))
-        listBunga.add(ItemData(R.drawable.mawar, "Mawar"))
-        listBunga.add(ItemData(R.drawable.flamboyan, "Flamboyan"))
-
-        bungaRecyclerView.layoutManager= LinearLayoutManager(this)
+        bungaRecyclerView.layoutManager = LinearLayoutManager (this )
         bungaRecyclerView.setHasFixedSize(true)
-        bungaAdapter = MyAdapter(listBunga)
-        bungaRecyclerView.adapter = bungaAdapter
+
+      listBunga = arrayListOf()
+        getDataUser()
     }
+
+    private fun getDataUser() {
+        for (i in gambar.indices) {
+            val databunga = ItemData(gambar[i],nama[i])
+            listBunga.add(databunga)
+
+        }
+        var adapter = MyAdapter(listBunga)
+        bungaRecyclerView.adapter=adapter
+        adapter.setOnItemClickListener(object:MyAdapter.onItemClickListener {
+            override fun onItemClick(position: Int){
+                intent= Intent(this@MainActivity, DetailActivity::class.java)
+                intent.putExtra("idgambar", listBunga[position].gambar)
+                intent.putExtra("idnama", listBunga[position].nama)
+                intent.putExtra("iddeskripsi", deskrpsi[position])
+
+                startActivity(intent)
+
+            }
+
+
+        })
+    }
+
+
 }
+

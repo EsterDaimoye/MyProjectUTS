@@ -5,12 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
+    android:background="@drawable/bg_1"
+    android:padding="6dp"
     tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="Home"
+        android:textSize="24sp"
+        android:textAlignment="center"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/BungaRV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/xample_item"/>
+
 </LinearLayout>
