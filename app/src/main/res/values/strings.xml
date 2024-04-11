@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MyProjectUTS</string>
+    <string name="black_rose">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lacinia massa at risus gravida, in gravida magna viverra. Mauris sollicitudin gravida hendrerit. Pellentesque vehicula nulla nibh, in maximus lacus posuere quis. Nulla volutpat eleifend lectus gravida commodo. Nullam vel cursus lacus. Suspendisse potenti. Nunc vehicula odio nisl, vitae consectetur erat fringilla non.
+        \n\n Cras accumsan vehicula sem in dignissim. Donec fringilla consectetur purus vitae consectetur. Donec vel dapibus justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean tempor ultricies sodales. Praesent ac auctor turpis, non interdum elit
+    </string>
+</resources>
