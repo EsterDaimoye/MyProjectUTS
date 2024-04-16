@@ -20,7 +20,17 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/BungaRV"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="580dp"
         tools:listitem="@layout/xample_item"/>
+
+    <Button
+        android:id="@+id/btnProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_corner"
+        android:text="Profile" />
 
 </LinearLayout>
