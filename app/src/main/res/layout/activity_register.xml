@@ -22,7 +22,7 @@
         android:textAlignment="center"/>
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/editTextConfigPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/textView3"
@@ -35,14 +35,14 @@
         android:id="@+id/editTextTextEmailAddress2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextTextPersonName"
+        android:layout_below="@id/editTextConfigPassword"
         android:layout_marginTop="30dp"
         android:ems="10"
         android:inputType="textEmailAddress"
         android:hint="Email" />
 
     <EditText
-        android:id="@+id/editTextTextPassword2"
+        android:id="@+id/editTextPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/editTextTextEmailAddress2"
@@ -55,7 +55,7 @@
         android:id="@+id/btnRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextTextPassword2"
+        android:layout_below="@id/editTextPassword"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:text="Register" />
