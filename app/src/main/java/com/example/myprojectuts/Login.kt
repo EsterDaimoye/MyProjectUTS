@@ -59,9 +59,7 @@ class Login : AppCompatActivity() {
                 Toast.makeText(this, "${it.exception?.message}", Toast.LENGTH_SHORT).show()
             }
         }
-
     }
-
     override fun onStart() {
         super.onStart()
         if (firebaseAuth.currentUser != null){
