@@ -10,7 +10,7 @@ import com.example.myprojectuts.databinding.ActivityLoginBinding
 import com.example.myprojectuts.databinding.ActivityRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
 
-class RegisterActivity: AppCompatActivity() {
+class Register: AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding
     private lateinit var firebaseAuth: FirebaseAuth
 
@@ -18,7 +18,6 @@ class RegisterActivity: AppCompatActivity() {
 
         binding= ActivityRegisterBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-        binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         firebaseAuth = FirebaseAuth.getInstance()
@@ -43,12 +42,15 @@ class RegisterActivity: AppCompatActivity() {
                 binding.editTextPassword.requestFocus()
                 return@setOnClickListener
             }
-            if (password != configpassword){
-                binding.editTextConfigPassword.error = "password must be match"
-                binding.editTextConfigPassword.requestFocus()
-                return@setOnClickListener
-            }
+//            if (password != configpassword){
+//                binding.editTextConfigPassword.error = "password must be match"
+//                binding.editTextConfigPassword.requestFocus()
+//                return@setOnClickListener
+//            }
+
+            RegisterUserfirebase(email, password)
         }
+
         binding.tvLogin.setOnClickListener{
             startActivity(Intent(this, Login::class.java))
         }

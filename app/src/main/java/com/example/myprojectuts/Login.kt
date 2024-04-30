@@ -39,7 +39,7 @@ class Login : AppCompatActivity() {
             }
         }
         binding.tvRegister.setOnClickListener{
-            startActivity(Intent(this , RegisterActivity::class.java))
+            startActivity(Intent(this , Register::class.java))
         }
         binding.tvForgetPassword.setOnClickListener{
            Intent(this , ForgetPassword::class.java).also {

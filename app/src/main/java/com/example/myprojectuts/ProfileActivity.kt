@@ -17,5 +17,10 @@ class ProfileActivity : AppCompatActivity() {
         val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
+
+        binding.btnLogout.setOnClickListener {
+            val intent = Intent(this, Login::class.java)
+            startActivity(intent)
+        }
     }
 }
